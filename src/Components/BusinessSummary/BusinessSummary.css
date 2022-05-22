@@ -1,0 +1,48 @@
+.count {
+    display: flex;
+    justify-content: center;
+}
+
+.counter {
+    background-color: white;
+    color: black;
+    box-shadow: 5px 3px 23px gray;
+    font-weight: bold;
+    width: 200px;
+    height: 200px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 80px;
+
+}
+
+.icon {
+    color: navy;
+}
+
+.counter:hover {
+    border: 2px solid navy;
+    color: white;
+    background: url('https://wallpaperaccess.com/full/6547781.jpg');
+    background-size: cover;
+}
+
+.counter:hover .icon {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .count {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .counter {
+        margin: 10px 0;
+    }
+}

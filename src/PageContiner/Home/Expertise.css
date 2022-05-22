@@ -1,0 +1,53 @@
+.expertises {
+    box-shadow: 5px 5px 20px gray;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.about-wrap,
+.why-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+}
+
+.about-bg,
+.why-bg {
+    opacity: 0.1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.about-content,
+.why-content {
+    position: relative;
+}
+
+.about-content img {
+    width: 70px;
+    height: 70px;
+}
+
+.about-content>p {
+    font-weight: bold;
+}
+
+.why-content>p {
+    line-height: 2.9;
+}
+
+@media only screen and (max-width: 480px) {
+    .why-content>p {
+        line-height: auto;
+    }
+
+    .about-wrap,
+    .why-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
