@@ -1,6 +1,12 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 const Navbar = () => {
+    const handleSignout = () => {
+        localStorage.removeItem('token')
+        signOut(auth)
+    }
     return (
         <div>
             <div className="navbar bg-cyan-700 sticky top-10">
@@ -27,7 +33,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+
+                    <a className="btn" onClick={handleSignout}>Get started</a>
                 </div>
             </div>
         </div>
