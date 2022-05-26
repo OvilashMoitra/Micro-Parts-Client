@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-// import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import './Login.css'
 import useJWT from '../../Hooks/useJWT';
 
 // import useToken from '../../hooks/useToken';
@@ -53,7 +52,7 @@ const Login = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex  h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
@@ -119,7 +118,7 @@ const Login = () => {
                     >Continue with Google</button>
                 </div>
             </div>
-            <img src={"https://img.freepik.com/free-vector/access-control-system-abstract-concept-vector-illustration-security-system-authorize-entry-login-credentials-electronic-access-password-passphrase-pin-verification-abstract-metaphor_335657-5746.jpg?t=st=1653273460~exp=1653274060~hmac=80fa5d6c5fdee5ea82f9d4f06adc9ae2b958a606ea25d830a8cfdbb0a563c3a6&w=740"} alt="" />
+            <img className='login-image' src={"https://img.freepik.com/free-vector/access-control-system-abstract-concept-vector-illustration-security-system-authorize-entry-login-credentials-electronic-access-password-passphrase-pin-verification-abstract-metaphor_335657-5746.jpg?t=st=1653273460~exp=1653274060~hmac=80fa5d6c5fdee5ea82f9d4f06adc9ae2b958a606ea25d830a8cfdbb0a563c3a6&w=740"} alt="" />
         </div >
     );
 };
