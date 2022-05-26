@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useAdmin = user => {
+const useRole = user => {
     const [role, setRole] = useState('');
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
@@ -26,4 +26,4 @@ const useAdmin = user => {
     return [role]
 }
 
-export default useAdmin;
+export default useRole;

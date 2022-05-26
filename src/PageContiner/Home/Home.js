@@ -9,14 +9,14 @@ import Footer from '../../Components/Footer/Footer';
 import useProducts from '../../Hooks/useProducts';
 import Products from '../../Components/Products/Products';
 import './Home.css'
-import useAdmin from '../../Hooks/useAdmin';
+import useRole from '../../Hooks/useRole';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 const Home = () => {
     const { data, isLoading } = useProducts();
     const [user] = useAuthState(auth)
     console.log(localStorage.getItem('token'))
-    const [role] = useAdmin(user)
+    const [role] = useRole(user)
     if (isLoading) {
         return
     }

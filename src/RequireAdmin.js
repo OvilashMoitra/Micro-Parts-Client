@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from './firebase.init';
-import useAdmin from './Hooks/useAdmin';
+import useRole from './Hooks/useRole';
 
 const RequireAdmin = ({ children }) => {
     const [user, isloading] = useAuthState(auth)
-    const [role] = useAdmin(user)
+    const [role] = useRole(user)
     let location = useLocation();
     if (isloading) {
         return

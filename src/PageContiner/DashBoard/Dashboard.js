@@ -4,12 +4,12 @@ import { Link, Outlet } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import auth from '../../firebase.init';
-import useAdmin from '../../Hooks/useAdmin';
+import useRole from '../../Hooks/useRole';
 import MyOrder from './MyOrder';
 
 const Dashboard = () => {
     const [user, isLoading] = useAuthState(auth)
-    const [role] = useAdmin(user)
+    const [role] = useRole(user)
     return (
         <div>
             <Navbar></Navbar>
