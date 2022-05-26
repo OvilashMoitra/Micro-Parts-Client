@@ -45,9 +45,7 @@ const CheckoutForm = ({ product }) => {
         if (!stripe || !elements) {
             return;
         }
-        if (transactionId) {
-            navigate('/')
-        }
+
         const card = elements.getElement(CardElement);
 
         if (card === null) {
@@ -97,7 +95,7 @@ const CheckoutForm = ({ product }) => {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
-                    // 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(updatedProduct)
             }).then(res => res.json())
@@ -105,7 +103,6 @@ const CheckoutForm = ({ product }) => {
                     setProcessing(false);
                     console.log(data);
                 })
-
         }
     }
 

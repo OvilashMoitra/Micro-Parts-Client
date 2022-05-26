@@ -1,10 +1,26 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddReview = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [user, isloading] = useAuthState(auth)
     const onSubmit = data => {
+        const review = { 'name': user?.displayName, 'email': user?.email, 'review': data?.reviewText, 'star': data?.review, 'img': user?.photoURL }
         console.log(data);
+        const url = `http://localhost:5000/review`
+        fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(result => {
+                toast.success('Review Added')
+            })
+        reset()
     }
     return (
         <div>
@@ -15,7 +31,7 @@ const AddReview = () => {
                         <span className="label-text">Review</span>
                     </label>
                     <textarea class="textarea textarea-info" required placeholder="Write your detailed Review"
-                        {...register("review-text")}
+                        {...register("reviewText")}
                     ></textarea>
                 </div>
                 <input type="range" min="1" max="5" class="range" step="1" className='w-1/3' {...register("review")} required />

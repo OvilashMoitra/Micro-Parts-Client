@@ -34,22 +34,22 @@ const Payment = () => {
     return (
         <>
             <div className="flex w-screen h-screen items-center justify-center">
-                <img className="w-2/5" src={product?.img} alt="" />
-                <div class=" bg-base-100 shadow-2xl">
-                    <div class="card-body w-1/3">
+                <img className="w-2/5 rounded-xl shadow-2xl" src={product?.img} alt="" />
+                <div class=" bg-base-100 shadow-2xl rounded-xl">
+                    <div class="card-body ">
                         <p className="text-success font-bold">Hello, {user.name}</p>
                         <h2 class="card-title">Please Pay for {product?.price * product?.quantity}</h2>
                         <p>Your product: <span className='text-orange-700'>{product?.date}</span> at {product?.slot}</p>
                         <p>By filling up the card information you will be charged the money.</p>
                     </div>
+                    <div class="card-body w-50 max-w-md">
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm product={product} />
+                        </Elements>
+                    </div>
                 </div>
             </div>
-            <div class="card flex items-center justify-center shadow-2xl bg-base-100">
-                <div class="card-body w-50 max-w-md">
-                    <Elements stripe={stripePromise}>
-                        <CheckoutForm product={product} />
-                    </Elements>
-                </div>
+            <div class="card  w-50 flex items-center justify-center shadow-2xl bg-base-100">
             </div>
         </>
     );

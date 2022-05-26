@@ -14,6 +14,9 @@ const Table = ({ elem }) => {
                     </div>
                     <div>
                         <div class="font-bold">{elem?.name}</div>
+                        {
+                            elem?.transitionID ? <div class="font-bold text-lime-500">transitionID: {elem?.transitionID}</div> : null
+                        }
                     </div>
                 </div>
             </td>
