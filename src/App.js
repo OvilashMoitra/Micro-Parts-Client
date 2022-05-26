@@ -34,7 +34,7 @@ function App() {
             <Route path="myorder" element={<MyOrder />} />
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="addreview" element={<AddReview />} />
-            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
+            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>} />
           </Route>
           <Route path="payment/:id" element={<RequireAuth><Payment /></RequireAuth>} />
           <Route path="blogs" element={<Blogs />} />

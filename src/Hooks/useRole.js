@@ -17,13 +17,13 @@ const useRole = user => {
                 .then(data => {
                     console.log(data?.role)
                     const position = data?.role
-                    setRole(`${position}`);
+                    setRole(position);
                     setAdminLoading(false);
                 })
         }
     }, [user])
 
-    return [role]
+    return [role, adminLoading]
 }
 
 export default useRole;

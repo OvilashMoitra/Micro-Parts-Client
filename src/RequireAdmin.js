@@ -7,15 +7,16 @@ import useRole from './Hooks/useRole';
 
 const RequireAdmin = ({ children }) => {
     const [user, isloading] = useAuthState(auth)
-    const [role] = useRole(user)
+    const [role, adminLoading] = useRole(user)
+    console.log(role)
     let location = useLocation();
-    if (isloading) {
+    if (isloading || adminLoading) {
         return
     }
     if (role !== 'admin') {
-        signOut(auth)
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
+    return children;
 };
 
 export default RequireAdmin;

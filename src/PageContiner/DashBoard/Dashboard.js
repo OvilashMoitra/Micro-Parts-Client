@@ -9,7 +9,10 @@ import MyOrder from './MyOrder';
 
 const Dashboard = () => {
     const [user, isLoading] = useAuthState(auth)
-    const [role] = useRole(user)
+    const [role, adminLoading] = useRole(user)
+    if (isLoading || adminLoading) {
+        return
+    }
     return (
         <div>
             <Navbar></Navbar>

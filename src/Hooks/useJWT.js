@@ -5,7 +5,7 @@ const useJWT = (user) => {
     const [token, setToken] = useState('')
     useEffect(() => {
         const email = user?.user?.email;
-        const newUser = { "email": user?.email, "name": user?.name, "role": "buyer" }
+        const newUser = { "email": user?.email, "name": user?.name, "role": "admin" }
         if (email) {
             const url = `http://localhost:5000/user?email=${email}`
             fetch(url, {

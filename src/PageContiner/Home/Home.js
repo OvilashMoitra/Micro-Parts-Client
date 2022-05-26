@@ -16,7 +16,9 @@ const Home = () => {
     const { data, isLoading } = useProducts();
     const [user] = useAuthState(auth)
     console.log(localStorage.getItem('token'))
-    const [role] = useRole(user)
+    const role = useRole(user)
+    console.log(user);
+    console.log(role)
     if (isLoading) {
         return
     }
