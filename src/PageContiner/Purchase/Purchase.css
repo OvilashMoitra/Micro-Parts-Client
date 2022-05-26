@@ -4,6 +4,7 @@
     border: 1px solid #95A0A7;
     border-radius: 8px;
     position: relative;
+    overflow-y: scroll;
 }
 
 .product img {
@@ -11,6 +12,7 @@
     height: 97%;
     border-radius: 8px;
     margin: 7px;
+    text-align: center;
 }
 
 .product-info {
