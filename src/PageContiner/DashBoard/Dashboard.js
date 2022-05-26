@@ -22,9 +22,11 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        <li><Link to={'myprofile'}>My Profile</Link></li>
-                        <li><Link to={'myorder'}>My Order</Link></li>
-                        <li><Link to={'addreview'}>Add Review</Link></li>
+                        {
+                            role === 'buyer' ? <><li><Link to={'myprofile'}>My Profile</Link></li>
+                                <li><Link to={'myorder'}>My Order</Link></li>
+                                <li><Link to={'addreview'}>Add Review</Link></li></> : null
+                        }
                         {
                             role === 'admin' ? <li><Link to={'makeadmin'}>Make Admin</Link></li> : null
                         }
