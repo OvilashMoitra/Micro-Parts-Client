@@ -30,12 +30,12 @@ const AddReview = () => {
                     <label className="label">
                         <span className="label-text">Review</span>
                     </label>
-                    <textarea class="textarea textarea-info" required placeholder="Write your detailed Review"
+                    <textarea className="textarea textarea-info" required placeholder="Write your detailed Review"
                         {...register("reviewText")}
                     ></textarea>
                 </div>
-                <input type="range" min="1" max="5" class="range" step="1" className='w-1/3' {...register("review")} required />
-                <div class="w-1/3 flex justify-between text-xs px-2 cursor-pointer">
+                <input type="range" min="1" max="5" className="range" step="1" className='w-1/3' {...register("review")} required />
+                <div className="w-1/3 flex justify-between text-xs px-2 cursor-pointer">
                     <span>1</span>
                     <span>2</span>
                     <span>3</span>

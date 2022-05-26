@@ -8,15 +8,20 @@ const ShowProfile = () => {
     const [dbUser, setDbUser] = useState({})
     useEffect(() => {
         const url = `http://localhost:5000/user?email=${user?.email}`
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+        })
             .then(res => res.json())
             .then(data => setDbUser(data))
 
     }, [user])
     return (
         <div className='card flex flex-col justify-center items-center mt-10'>
-            <div class="avatar">
-                <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <div className="avatar">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <img src={user?.photoURL} alt='' />
                 </div>
             </div>
@@ -27,7 +32,7 @@ const ShowProfile = () => {
                 {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>City: Not provided yet</p> : <p className='font-bold'>City: {dbUser?.city}</p>}
                 {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>Education: Not provided yet</p> : <p className='font-bold'>Education: {dbUser?.education}</p>}
                 {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>LinkedIn: Not provided yet</p> :
-                    <p className='font-bold' >LinkedIn :</p>}
+                    <p className='font-bold' >LinkedIn : </p>}
             </div>
         </div>
     );

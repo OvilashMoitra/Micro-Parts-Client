@@ -26,14 +26,14 @@ const UpdateProfileModal = ({ setOpenModal, setPercentage }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="my-profile" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <label for="my-profile" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <input type="checkbox" id="my-profile" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <label for="my-profile" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className='text-2xl font-bold mb-4'>Updating Profile</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className='input input-bordered w-full max-w-xs ' type="text" required name="education" placeholder='Enter your latest qualification' id="" {...register("education")} />
-                        <select name='city' required class="select select-primary w-full max-w-xs mt-4" {...register("city")} >
+                        <select name='city' required className="select select-primary w-full max-w-xs mt-4" {...register("city")} >
                             <option disabled selected>Choose your city</option>
                             <option>Rajshahi</option>
                             <option>Dhaka</option>

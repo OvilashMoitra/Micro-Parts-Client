@@ -15,6 +15,9 @@ import MyOrder from './PageContiner/DashBoard/MyOrder';
 import AddReview from './PageContiner/DashBoard/AddReview';
 import MyProfile from './PageContiner/DashBoard/MyProfile';
 import Payment from './PageContiner/DashBoard/Payment';
+import MakeAdmin from './PageContiner/DashBoard/MakeAdmin.js'
+import RequireAuth from './RequireAuth';
+import RequireAdmin from './RequireAdmin';
 const queryClient = new QueryClient()
 function App() {
   return (
@@ -22,15 +25,18 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="purchase/:id" element={<Purchase />} />
+          <Route path="purchase/:id" element={
+            <RequireAuth><Purchase /></RequireAuth>
+          } />
           <Route path="login" element={<Login />} />
           <Route path="registration" element={<Registration />} />
-          <Route path="dashboard" element={<Dashboard />}>
+          <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
             <Route path="myorder" element={<MyOrder />} />
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="addreview" element={<AddReview />} />
+            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
           </Route>
-          <Route path="payment/:id" element={<Payment />} />
+          <Route path="payment/:id" element={<RequireAuth><Payment /></RequireAuth>} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="myportfolio" element={<MyPortfolio />} />
           <Route path="*" element={<NotFound />} />

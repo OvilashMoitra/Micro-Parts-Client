@@ -22,7 +22,7 @@ const Payment = () => {
     const { data: product, isLoading } = useQuery(['payment', id], () => fetch(url, {
         method: 'GET',
         headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            'authorization': `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => res.json()));
 
@@ -35,21 +35,21 @@ const Payment = () => {
         <>
             <div className="flex w-screen h-screen items-center justify-center">
                 <img className="w-2/5 rounded-xl shadow-2xl" src={product?.img} alt="" />
-                <div class=" bg-base-100 shadow-2xl rounded-xl">
-                    <div class="card-body ">
+                <div className=" bg-base-100 shadow-2xl rounded-xl">
+                    <div className="card-body ">
                         <p className="text-success font-bold">Hello, {user.name}</p>
-                        <h2 class="card-title">Please Pay for {product?.price * product?.quantity}</h2>
+                        <h2 className="card-title">Please Pay for {product?.price * product?.quantity}</h2>
                         <p>Your product: <span className='text-orange-700'>{product?.date}</span> at {product?.slot}</p>
                         <p>By filling up the card information you will be charged the money.</p>
                     </div>
-                    <div class="card-body w-50 max-w-md">
+                    <div className="card-body w-50 max-w-md">
                         <Elements stripe={stripePromise}>
                             <CheckoutForm product={product} />
                         </Elements>
                     </div>
                 </div>
             </div>
-            <div class="card  w-50 flex items-center justify-center shadow-2xl bg-base-100">
+            <div className="card  w-50 flex items-center justify-center shadow-2xl bg-base-100">
             </div>
         </>
     );

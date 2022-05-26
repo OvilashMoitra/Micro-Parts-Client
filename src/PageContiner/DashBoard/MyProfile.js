@@ -14,7 +14,12 @@ const MyProfile = () => {
 
     useEffect(() => {
         const url = `http://localhost:5000/user?email=${user?.email}`
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+        })
             .then(res => res.json())
             .then(data => setDbUser(data))
 
@@ -50,7 +55,7 @@ const MyProfile = () => {
             }
             <ShowProfile></ShowProfile>
             {Object.keys(dbUser)?.length === 3 ? <div className='text-center'>
-                <label for="my-profile" onClick={() => setOpenModal(true)} class="btn modal-button">Update Profile</label>
+                <label for="my-profile" onClick={() => setOpenModal(true)} className="btn modal-button">Update Profile</label>
             </div> : null}
 
         </div>
