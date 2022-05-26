@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion"
+import './Carousel.css'
 const Carousel = () => {
     return (
         <motion.div
@@ -7,7 +8,7 @@ const Carousel = () => {
             initial={{ translateY: -80 }}
             whileInView={{ translateY: 50 }}
             viewport={{ once: true }}
-            className='absolute top-80 right-40'>
+            className='absolute banner-carousel top-80 right-40'>
             <div class="carousel carousel-center max-w-md p-4 space-x-4 bg-black rounded-box" style={{ height: '330px' }}>
                 <div class="carousel-item">
                     <img src="https://img.game-news24.com/2021/10/ASRock-has-released-a-Z690-Taichi-A-Razer-Chroma-Makeover.jpeg" class="rounded-box" style={{ height: '292px', width: "292px" }} />
