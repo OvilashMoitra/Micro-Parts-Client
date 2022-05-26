@@ -1,9 +1,13 @@
 import React from 'react';
+import Footer from '../../Components/Footer/Footer';
+import Navbar from '../../Components/Navbar/Navbar';
 
 const Blogs = () => {
     return (
         <div>
-            <p>this is blogs</p>
+            <Navbar></Navbar>
+            <p>this is portfolio</p>
+            <Footer></Footer>
         </div>
     );
 };

@@ -62,7 +62,7 @@ const Purchase = () => {
             })
         toast.success('Product Added to cart')
         // Adding to cart
-        const product = { id: data._id, name: data.name, img: data.img, description: data.description, quantity: orderedQuantity, paidStaus: 'unpaid', price: data.price, email: user?.email }
+        const product = { name: data.name, img: data.img, description: data.description, quantity: orderedQuantity, paidStaus: 'unpaid', price: data.price, email: user?.email }
         fetch('http://localhost:5000/cart', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
