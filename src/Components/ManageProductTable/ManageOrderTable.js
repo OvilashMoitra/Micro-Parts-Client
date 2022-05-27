@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import DeletedModal from '../DeletedModal/DeletedModal';
 
-const ManageProductTable = ({ elem, refetch }) => {
+const ManageOrderTable = ({ elem, refetch }) => {
     const [openModal, setOpenModal] = useState(false)
     const [id, setId] = useState('')
     const handleShipped = (id) => {
@@ -70,4 +70,4 @@ const ManageProductTable = ({ elem, refetch }) => {
     );
 };
 
-export default ManageProductTable;
+export default ManageOrderTable;

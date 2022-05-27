@@ -36,6 +36,7 @@ const Dashboard = () => {
                             role === 'admin' ? <>
                                 <li><Link to={'manageorders'}>Manage Order</Link></li>
                                 <li><Link to={'makeadmin'}>Make Admin</Link></li>
+                                <li><Link to={'manageproduct'}>Manage Product</Link></li>
                             </> : null
                         }
 

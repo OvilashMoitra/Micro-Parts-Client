@@ -1,6 +1,6 @@
 import React from 'react';
 import { QueryClient, useQuery } from 'react-query';
-import ManageProductTable from '../../Components/ManageProductTable/ManageProductTable';
+import ManageOrderTable from '../../Components/ManageProductTable/ManageOrderTable'
 
 const ManageOrders = () => {
     const queryClient = new QueryClient()
@@ -27,7 +27,7 @@ const ManageOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            data?.map(elem => <ManageProductTable key={elem._id} refetch={refetch} elem={elem}></ManageProductTable>)
+                            data?.map(elem => <ManageOrderTable key={elem._id} refetch={refetch} elem={elem}></ManageOrderTable>)
                         }
                     </tbody>
                 </table>
