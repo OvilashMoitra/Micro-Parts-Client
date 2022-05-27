@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const UserTable = ({ elem, refetch }) => {
+const UserTable = ({ elem, refetch, index }) => {
     const makeAdmin = (email) => {
         const url = `http://localhost:5000/users?email=${email}`
         fetch(url, {
@@ -20,7 +20,7 @@ const UserTable = ({ elem, refetch }) => {
             <td>
                 <div className="flex items-center space-x-3">
                     <div>
-                        <div className="font-bold">{elem?.name}</div>
+                        <div className="font-bold">{index + 1}</div>
                     </div>
                 </div>
             </td>

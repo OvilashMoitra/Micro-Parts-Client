@@ -17,7 +17,7 @@ const MakeAdmin = () => {
             <table className="table w-full">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>#</th>
                         <th>Email</th>
                         <th>Role</th>
                         <th>Action</th>
@@ -25,7 +25,7 @@ const MakeAdmin = () => {
                 </thead>
                 <tbody>
                     {
-                        data?.map(elem => <UserTable key={elem._id} refetch={refetch} elem={elem}></UserTable>)
+                        data?.map((elem, index) => <UserTable key={elem._id} index={index} refetch={refetch} elem={elem}></UserTable>)
                     }
                 </tbody>
             </table>

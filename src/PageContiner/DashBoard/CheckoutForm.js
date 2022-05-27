@@ -88,6 +88,7 @@ const CheckoutForm = ({ product }) => {
             const updatedProduct = {
                 ...product,
                 'paidStaus': 'paid',
+                'shippingStatus': 'pending',
                 'transactionId': paymentIntent.id
             }
             console.log(product, updatedProduct);
