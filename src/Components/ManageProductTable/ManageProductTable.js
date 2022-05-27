@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import DeletedModal from '../DeletedModal/DeletedModal';
 
 const ManageProductTable = ({ elem, refetch }) => {
+    const [openModal, setOpenModal] = useState(false)
+    const [id, setId] = useState('')
     const handleShipped = (id) => {
         const updatedProduct = { 'shippingStatus': 'Shipped' }
         fetch(`http://localhost:5000/cart/${id}`, {
@@ -17,6 +20,10 @@ const ManageProductTable = ({ elem, refetch }) => {
                 toast.success('Shipping Status Updated')
                 refetch()
             })
+    }
+    const handleDelete = () => {
+        setOpenModal(true)
+        setId(elem?._id)
     }
     return (
         <tr>
@@ -50,10 +57,13 @@ const ManageProductTable = ({ elem, refetch }) => {
             </td>
             <td>
                 {
-                    elem?.paidStaus === 'unpaid' ? <button className="btn btn-sm btn-warning">Cancel Order</button> : null
+                    elem?.paidStaus === 'unpaid' ? <label onClick={handleDelete} for="deletedmodal" class="btn modal-button btn-error">Cancel Order</label> : null
                 }
                 {
                     elem?.shippingStatus === 'pending' ? <button className="btn btn-sm btn-info" onClick={() => handleShipped(elem?._id)}>Shipped</button> : null
+                }
+                {
+                    openModal ? <DeletedModal setOpenModal={setOpenModal} id={id} refetch={refetch}></DeletedModal> : null
                 }
             </td>
         </tr>
