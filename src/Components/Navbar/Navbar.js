@@ -1,14 +1,16 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
     const handleSignout = () => {
         localStorage.removeItem('token')
         signOut(auth)
+        navigate('/login')
     }
     return (
         <div>
@@ -36,7 +38,7 @@ const Navbar = () => {
                         <li><Link to={'/blogs'}>Blogs</Link></li>
                         <li><Link to={'/myportfolio'}>My Portfolio</Link></li>
                         {
-                            user ? <li><Link to={'/dashboard'}>Dashboard</Link></li> : <li><Link to={'/login'}>Login</Link></li>
+                            user ? <li><Link to={'/dashboard/myorder'}>Dashboard</Link></li> : <li><Link to={'/login'}>Login</Link></li>
                         }
                     </ul>
                 </div>

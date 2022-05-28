@@ -27,7 +27,7 @@ const UserTable = ({ elem, refetch, index }) => {
             <td>
                 {elem?.email}
             </td>
-            <td>{elem?.role}</td>
+            <td>{!elem?.role ? <p>Buyer</p> : elem?.role}</td>
             <td>
                 {
                     elem?.role !== 'admin' ? <button className='btn btn-sm btn-info' onClick={() => makeAdmin(elem?.email)}>Make Admin</button> : null

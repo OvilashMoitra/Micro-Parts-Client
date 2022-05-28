@@ -24,21 +24,23 @@ const Dashboard = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg></label>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side ">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto w-80 bg-gray-300 text-base-content">
                         {
-                            role === 'buyer' ? <>
-                                <li><Link to={'myorder'}>My Order</Link></li>
-                                <li><Link to={'addreview'}>Add Review</Link></li></> : null
+                            role !== 'admin' ? <>
+                                <li><Link to={'/dashboard/myorder'}>My Order</Link></li>
+                                <li><Link to={'/dashboard/addreview'}>Add Review</Link></li>
+                            </> : null
                         }
-                        <li><Link to={'myprofile'}>My Profile</Link></li>
+
+                        <li><Link to={'/dashboard/myprofile'}>My Profile</Link></li>
                         {
                             role === 'admin' ? <>
-                                <li><Link to={'manageorders'}>Manage Order</Link></li>
-                                <li><Link to={'makeadmin'}>Make Admin</Link></li>
-                                <li><Link to={'manageproduct'}>Manage Product</Link></li>
-                                <li><Link to={'addproduct'}>Add Product</Link></li>
+                                <li><Link to={'/dashboard/manageorders'}>Manage Order</Link></li>
+                                <li><Link to={'/dashboard/makeadmin'}>Make Admin</Link></li>
+                                <li><Link to={'/dashboard/manageproduct'}>Manage Product</Link></li>
+                                <li><Link to={'/dashboard/addproduct'}>Add Product</Link></li>
                             </> : null
                         }
 

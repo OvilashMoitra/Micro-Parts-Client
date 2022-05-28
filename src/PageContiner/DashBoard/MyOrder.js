@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
@@ -30,6 +30,7 @@ const MyOrder = () => {
                     {
                         data.map(elem => <Table
                             key={elem._id}
+                            refetch={refetch}
                             elem={elem}
                         ></Table>)
                     }

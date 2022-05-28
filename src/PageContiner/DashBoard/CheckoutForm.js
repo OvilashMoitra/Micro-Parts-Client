@@ -7,7 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ product }) => {
     const stripe = useStripe();
@@ -136,8 +136,10 @@ const CheckoutForm = ({ product }) => {
             {
                 success && <div className='text-green-500'>
                     <p>{success}  </p>
+                    <Link className="btn btn-sm btn-success" title="Go to myorder" to={'/dashboard/myorder'}>Continue Shopping</Link>
                 </div>
             }
+
         </>
     );
 }

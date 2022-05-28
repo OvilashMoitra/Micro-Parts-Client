@@ -33,14 +33,14 @@ function App() {
           } />
           <Route path="login" element={<Login />} />
           <Route path="registration" element={<Registration />} />
-          <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-            <Route path="myorder" element={<MyOrder />} />
-            <Route path="myprofile" element={<MyProfile />} />
-            <Route path="addreview" element={<AddReview />} />
-            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>} />
-            <Route path="manageorders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} />
-            <Route path="manageproduct" element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>} />
-            <Route path="addproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} />
+          <Route element={<RequireAuth><Dashboard /></RequireAuth>}>
+            <Route path="/dashboard/myorder" element={<MyOrder />} />
+            <Route index path="/dashboard/myprofile" element={<MyProfile />} />
+            <Route path="/dashboard/addreview" element={<AddReview />} />
+            <Route path="/dashboard/makeadmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>} />
+            <Route path="/dashboard/manageorders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} />
+            <Route path="/dashboard/manageproduct" element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>} />
+            <Route path="/dashboard/addproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} />
           </Route>
           <Route path="payment/:id" element={<RequireAuth><Payment /></RequireAuth>} />
           <Route path="blogs" element={<Blogs />} />

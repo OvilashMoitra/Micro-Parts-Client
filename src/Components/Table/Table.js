@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import DeletedModal from '../DeletedModal/DeletedModal';
 
-const Table = ({ elem }) => {
+const Table = ({ elem, refetch }) => {
+    const [id, setId] = useState('')
+    const [openModal, setOpenModal] = useState(false)
+    // Delete Product
+    const handleDelete = () => {
+        setOpenModal(true)
+        setId(elem?._id)
+    }
     console.log(elem)
     return (
         <tr>
@@ -26,8 +34,12 @@ const Table = ({ elem }) => {
             <td>{elem?.price * elem?.quantity}$</td>
             <td>
                 {elem.paidStaus === 'unpaid' ? <><Link to={`/payment/${elem?._id}`}><button className="btn btn-warning btn-xs">Pay Now</button></Link>
-                    <button className=" ml-2 btn btn-error btn-xs">Cancel</button>
-                </> : <span className="indicator-item badge">Paid</span>}
+                    <label onClick={handleDelete} for="deletedmodal" class="btn btn-sm ml-5 modal-button btn-error">Cancel</label>
+                </> : <><span className="indicator-item bg-green-800 badge">Paid</span> <span >{elem?.shippingStatus === 'pending' ? <span className="indicator-item bg-yellow-400 badge">Pending</span> : <span className="indicator-item bg-green-800 badge">Shipped</span>}</span>
+                </>}
+                {
+                    openModal ? <DeletedModal setOpenModal={setOpenModal} id={id} refetch={refetch}></DeletedModal> : null
+                }
             </td>
         </tr>
     );

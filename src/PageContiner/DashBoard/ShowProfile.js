@@ -31,8 +31,7 @@ const ShowProfile = () => {
                 <p className='font-bold'>Role : {dbUser?.role}</p>
                 {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>City: Not provided yet</p> : <p className='font-bold'>City: {dbUser?.city}</p>}
                 {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>Education: Not provided yet</p> : <p className='font-bold'>Education: {dbUser?.education}</p>}
-                {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>LinkedIn: Not provided yet</p> :
-                    <a href={dbUser?.linkin}>Linkedin</a>}
+                {Object.keys(dbUser)?.length === 3 ? <p className='font-bold'>LinkedIn: Not provided yet</p> : <a className='font-bold text-blue-800' href={dbUser?.linkedInProfile}>Linkedin</a>}
             </div>
         </div>
     );

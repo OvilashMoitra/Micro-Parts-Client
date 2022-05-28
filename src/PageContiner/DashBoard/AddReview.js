@@ -42,7 +42,7 @@ const AddReview = () => {
                     <span>4</span>
                     <span>5</span>
                 </div>
-                <button type="submit">Submit</button>
+                <button className='btn btn-sm btn-success' type="submit">Submit</button>
             </form>
         </div>
     );
