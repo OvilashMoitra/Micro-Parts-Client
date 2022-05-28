@@ -65,7 +65,8 @@ const Blogs = () => {
                     <div class="card-body">
                         <h2 class="card-title"> Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]) Why you do not set products = [...] instead, you use the setProducts</h2>
                         <p>
-
+                            React use virtual Dom to work.When something changes React, keeps a track record of all its virtual DOM. Whenever a change happens, all the components are rendered and this new virtual DOM is then compared with the old virtual DOM.
+                            If used directly react won't found the changes as old and new react dom will be the same.This is why we use useState to change some state.
                         </p>
                     </div>
                 </div>
