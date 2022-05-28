@@ -13,7 +13,7 @@ const MyProfile = () => {
     const [dbUser, setDbUser] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:5000/user?email=${user?.email}`
+        const url = `https://afternoon-scrubland-76054.herokuapp.com/user?email=${user?.email}`
         fetch(url, {
             method: 'GET',
             headers: {
@@ -55,7 +55,7 @@ const MyProfile = () => {
             }
             <ShowProfile></ShowProfile>
             {Object.keys(dbUser)?.length === 3 ? <div className='text-center'>
-                <label for="my-profile" onClick={() => setOpenModal(true)} className="btn modal-button">Update Profile</label>
+                <label htmlFor="my-profile" onClick={() => setOpenModal(true)} className="btn modal-button">Update Profile</label>
             </div> : null}
 
         </div>

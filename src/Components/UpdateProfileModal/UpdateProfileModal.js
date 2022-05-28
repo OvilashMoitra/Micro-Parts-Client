@@ -9,7 +9,7 @@ const UpdateProfileModal = ({ setOpenModal, setPercentage }) => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/updateProfile?email=${user?.email}`
+        const url = `https://afternoon-scrubland-76054.herokuapp.com/updateProfile?email=${user?.email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
@@ -29,7 +29,7 @@ const UpdateProfileModal = ({ setOpenModal, setPercentage }) => {
             <input type="checkbox" id="my-profile" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label for="my-profile" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="my-profile" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className='text-2xl font-bold mb-4'>Updating Profile</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className='input input-bordered w-full max-w-xs ' type="text" required name="education" placeholder='Enter your latest qualification' id="" {...register("education")} />

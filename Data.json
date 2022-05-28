@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Motherboard",
+        "img": "https://img.game-news24.com/2021/10/ASRock-has-released-a-Z690-Taichi-A-Razer-Chroma-Makeover.jpeg",
+        "description": "Developed in partnership with Razer, this board combines ASRock's signature quality and durability with gorgeous lighting Razer is known for. This ATX motherboard is based on AMD X570 chipset and has 16 Power Phase Design, DDR4 4666+ (OC) support, PCIe 4.0 for VGA and M.2 SSD, and Killer network optimized for gaming. So you'll have all the essentials needed to build your new dream system based on the AMD Ryzen 5000 Series processors, for gaming, designing, engineering and content creation.",
+        "price": 700,
+        "stock": 10000
+    },
+    {
+        "name": "RAM",
+        "img": "https://cdn.wccftech.com/wp-content/uploads/2021/10/04-gskill-trident-z5-rgb-black-x4.jpg",
+        "description": "Supports 12th Gen Intel® Core™, Pentium® Gold and Celeron® processors for LGA 1700 socketSupports DDR4 Memory, up to 5200+(OC) MHz Lightning Fast Experience: PCIe 5.0 slots, Lightning Gen4 x4 M.2, USB 3.2 Gen 2x2Premium Thermal Solution: Extended Heatsink Design, MOSFET thermal pads rated for 7W/mk and M.2 Shield Frozr are built for high performance system and non-stop works2.5G LAN: Upgraded network solution for professional and multimedia use. Delivers a secure, stable and fast network connectionIntel Turbo USB 3.2 Gen 2: Powered by Intel USB 3.2 Gen2 controller, Turbo USB ensures an uninterrupted connection with more stability and fastest USB speedsAudio.Boost: Reward your ears with studio grade sound qualityHigh Quality PCB: 6-layer PCB made by 2oz thickened copper and server grade level materialMulti-GPU: With Steel armor PCI-E slots. Supports AMD Crossfire™",
+        "price": 300,
+        "stock": 10000
+    },
+    {
+        "name": "SSD",
+        "img": "https://media.ldlc.com/r1600/ld/products/00/05/70/62/LD0005706289_1.jpg",
+        "description": "Enjoy the fastest performance with SSDs which are up to 5X faster than traditional hard drives. SSDs use instant-access, high-speed non-volatile memory to store data rather than platters on a hard drive, making the huge increase in performance – up to 1.7X better on PCMark performance tests if you compare i3+SSD to i7+HDD",
+        "price": 500,
+        "stock": 10000
+    },
+    {
+        "name": "Motherboard",
+        "img": "https://img.game-news24.com/2021/10/ASRock-has-released-a-Z690-Taichi-A-Razer-Chroma-Makeover.jpeg",
+        "description": "Developed in partnership with Razer, this board combines ASRock's signature quality and durability with gorgeous lighting Razer is known for. This ATX motherboard is based on AMD X570 chipset and has 16 Power Phase Design, DDR4 4666+ (OC) support, PCIe 4.0 for VGA and M.2 SSD, and Killer network optimized for gaming. So you'll have all the essentials needed to build your new dream system based on the AMD Ryzen 5000 Series processors, for gaming, designing, engineering and content creation.",
+        "price": 700,
+        "stock": 10000
+    },
+    {
+        "name": "Motherboard",
+        "img": "https://img.game-news24.com/2021/10/ASRock-has-released-a-Z690-Taichi-A-Razer-Chroma-Makeover.jpeg",
+        "description": "Developed in partnership with Razer, this board combines ASRock's signature quality and durability with gorgeous lighting Razer is known for. This ATX motherboard is based on AMD X570 chipset and has 16 Power Phase Design, DDR4 4666+ (OC) support, PCIe 4.0 for VGA and M.2 SSD, and Killer network optimized for gaming. So you'll have all the essentials needed to build your new dream system based on the AMD Ryzen 5000 Series processors, for gaming, designing, engineering and content creation.",
+        "price": 700,
+        "stock": 10000
+    },
+    {
+        "name": "Motherboard",
+        "img": "https://img.game-news24.com/2021/10/ASRock-has-released-a-Z690-Taichi-A-Razer-Chroma-Makeover.jpeg",
+        "description": "Developed in partnership with Razer, this board combines ASRock's signature quality and durability with gorgeous lighting Razer is known for. This ATX motherboard is based on AMD X570 chipset and has 16 Power Phase Design, DDR4 4666+ (OC) support, PCIe 4.0 for VGA and M.2 SSD, and Killer network optimized for gaming. So you'll have all the essentials needed to build your new dream system based on the AMD Ryzen 5000 Series processors, for gaming, designing, engineering and content creation.",
+        "price": 700,
+        "stock": 10000
+    },
+]

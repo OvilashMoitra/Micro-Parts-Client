@@ -7,7 +7,7 @@ const ShowProfile = () => {
     const [user, isloading] = useAuthState(auth)
     const [dbUser, setDbUser] = useState({})
     useEffect(() => {
-        const url = `http://localhost:5000/user?email=${user?.email}`
+        const url = `https://afternoon-scrubland-76054.herokuapp.com/user?email=${user?.email}`
         fetch(url, {
             method: 'GET',
             headers: {

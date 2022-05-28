@@ -3,7 +3,6 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init.js';
-
 import useJWT from '../../Hooks/useJWT.js';
 
 

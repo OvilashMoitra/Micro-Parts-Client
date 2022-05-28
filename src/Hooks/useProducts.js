@@ -3,7 +3,7 @@ import { QueryClient, useQuery } from 'react-query';
 const useProducts = () => {
     const queryClient = new QueryClient()
     const { isLoading, error, data, refetch } = useQuery('repoData', () =>
-        fetch('http://localhost:5000/products').then(res =>
+        fetch('https://afternoon-scrubland-76054.herokuapp.com/products').then(res =>
             res.json()
         )
     )

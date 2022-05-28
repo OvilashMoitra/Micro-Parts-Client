@@ -34,7 +34,7 @@ const Table = ({ elem, refetch }) => {
             <td>{elem?.price * elem?.quantity}$</td>
             <td>
                 {elem.paidStaus === 'unpaid' ? <><Link to={`/payment/${elem?._id}`}><button className="btn btn-warning btn-xs">Pay Now</button></Link>
-                    <label onClick={handleDelete} for="deletedmodal" class="btn btn-sm ml-5 modal-button btn-error">Cancel</label>
+                    <label onClick={handleDelete} htmlFor="deletedmodal" className="btn btn-sm ml-5 modal-button btn-error">Cancel</label>
                 </> : <><span className="indicator-item bg-green-800 badge">Paid</span> <span >{elem?.shippingStatus === 'pending' ? <span className="indicator-item bg-yellow-400 badge">Pending</span> : <span className="indicator-item bg-green-800 badge">Shipped</span>}</span>
                 </>}
                 {

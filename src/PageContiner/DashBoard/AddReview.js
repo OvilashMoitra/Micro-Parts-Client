@@ -10,7 +10,7 @@ const AddReview = () => {
     const onSubmit = data => {
         const review = { 'name': user?.displayName, 'email': user?.email, 'review': data?.reviewText, 'star': data?.review, 'img': user?.photoURL }
         console.log(data);
-        const url = `http://localhost:5000/review`
+        const url = `https://afternoon-scrubland-76054.herokuapp.com/review`
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

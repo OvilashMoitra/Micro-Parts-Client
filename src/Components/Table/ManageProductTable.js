@@ -30,7 +30,7 @@ const ManageProductTable = ({ elem, refetch }) => {
             </td>
             <td>{elem?.price}$</td>
             <td>
-                <label onClick={handleDelete} for="productdeletedmodal" class="btn modal-button btn-error">Cancel Product</label>
+                <label onClick={handleDelete} htmlFor="productdeletedmodal" className="btn modal-button btn-error">Cancel Product</label>
             </td>
             {
                 openModal ? <ProductDeletedModal setOpenModal={setOpenModal} id={id} refetch={refetch}></ProductDeletedModal> : null
