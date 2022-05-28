@@ -37,9 +37,8 @@ const Payment = () => {
                 <img className="w-2/5 rounded-xl shadow-2xl" src={product?.img} alt="" />
                 <div className=" bg-base-100 shadow-2xl rounded-xl">
                     <div className="card-body ">
-                        <p className="text-success font-bold">Hello, {user.name}</p>
+                        <p className="text-black font-bold">Hello, {user?.displayName}</p>
                         <h2 className="card-title">Please Pay for {product?.price * product?.quantity}</h2>
-                        <p>Your product: <span className='text-orange-700'>{product?.date}</span> at {product?.slot}</p>
                         <p>By filling up the card information you will be charged the money.</p>
                     </div>
                     <div className="card-body w-50 max-w-md">

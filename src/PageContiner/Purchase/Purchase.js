@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import auth from '../../firebase.init';
+import ShowProfile from '../DashBoard/ShowProfile';
 import './Purchase.css'
 const Purchase = () => {
     const { id } = useParams()
@@ -75,6 +76,7 @@ const Purchase = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <ShowProfile></ShowProfile>
             <div className="product flex flex-col md:flex-row my-10 mx-auto">
                 <img src={data?.img} alt="" />
                 <div className="product-info">
