@@ -4,9 +4,9 @@ import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const imageStorageKey = 'cca1d66af8e3457cde08c945e171cf8a'
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => {
-        const image = data.image[0];
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const onSubmit = (data) => {
+        const image = data.img[0];
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
@@ -16,15 +16,17 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 if (result.success) {
                     const img = result.data.url;
                     const product = {
-                        name: data.name,
-                        description: data.description,
-                        price: data.price,
+                        name: data?.name,
+                        description: data?.description,
+                        price: data?.price,
                         img: img,
                         stock: data?.stock
                     }
+                    console.log(product);
                     fetch(`http://localhost:5000/addproduct`, {
                         method: 'POST',
                         headers: {
@@ -35,6 +37,7 @@ const AddProduct = () => {
                         .then(res => res.json())
                         .then(data => {
                             toast('Product Added')
+                            reset()
                         })
                 }
             })
