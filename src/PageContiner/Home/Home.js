@@ -12,14 +12,20 @@ import './Home.css'
 import useRole from '../../Hooks/useRole';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { QueryClient, useQuery } from 'react-query';
+import ShowReview from '../../Components/ShowReview/ShowReview';
 const Home = () => {
     const { data, isLoading } = useProducts();
+    const queryClient = new QueryClient()
+    const { isLoading: reviewLoading, error, data: review, refetch } = useQuery('review', () =>
+        fetch('http://localhost:5000/review').then(res =>
+            res.json()
+        )
+    )
     const [user] = useAuthState(auth)
     console.log(localStorage.getItem('token'))
     const role = useRole(user)
-    console.log(user);
-    console.log(role)
-    if (isLoading) {
+    if (isLoading || reviewLoading) {
         return
     }
     return (
@@ -35,6 +41,14 @@ const Home = () => {
                         product={product}
                     ></Products>)
                 }
+            </div>
+            <div className='flex flex-col justify-center items-center'>
+                <h3 className='font-bold'>Scroll to see other review</h3>
+                <div class="carousel carousel-center md:w-1/2 w-5/6  p-4 space-x-10 overflow-scroll bg-neutral rounded-box">
+                    {
+                        review.map(elem => <ShowReview key={elem._id} elem={elem}></ShowReview>)
+                    }
+                </div>
             </div>
             <Footer></Footer>
         </div>
