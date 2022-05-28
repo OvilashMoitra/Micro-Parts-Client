@@ -28,15 +28,17 @@ const Dashboard = () => {
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         {
-                            role === 'buyer' ? <><li><Link to={'myprofile'}>My Profile</Link></li>
+                            role === 'buyer' ? <>
                                 <li><Link to={'myorder'}>My Order</Link></li>
                                 <li><Link to={'addreview'}>Add Review</Link></li></> : null
                         }
+                        <li><Link to={'myprofile'}>My Profile</Link></li>
                         {
                             role === 'admin' ? <>
                                 <li><Link to={'manageorders'}>Manage Order</Link></li>
                                 <li><Link to={'makeadmin'}>Make Admin</Link></li>
                                 <li><Link to={'manageproduct'}>Manage Product</Link></li>
+                                <li><Link to={'addproduct'}>Add Product</Link></li>
                             </> : null
                         }
 

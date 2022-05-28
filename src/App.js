@@ -20,6 +20,7 @@ import RequireAuth from './RequireAuth';
 import RequireAdmin from './RequireAdmin';
 import ManageOrders from './PageContiner/DashBoard/ManageOrders';
 import ManageProduct from './PageContiner/DashBoard/ManageProduct';
+import AddProduct from './PageContiner/DashBoard/AddProduct';
 const queryClient = new QueryClient()
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="makeadmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>} />
             <Route path="manageorders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} />
             <Route path="manageproduct" element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>} />
+            <Route path="addproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} />
           </Route>
           <Route path="payment/:id" element={<RequireAuth><Payment /></RequireAuth>} />
           <Route path="blogs" element={<Blogs />} />
