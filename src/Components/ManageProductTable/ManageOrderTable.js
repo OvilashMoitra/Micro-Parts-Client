@@ -7,7 +7,7 @@ const ManageOrderTable = ({ elem, refetch }) => {
     const [id, setId] = useState('')
     const handleShipped = (id) => {
         const updatedProduct = { 'shippingStatus': 'Shipped' }
-        fetch(`https://afternoon-scrubland-76054.herokuapp.com/cart/${id}`, {
+        fetch(`https://micropart-server.onrender.com/cart/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

@@ -23,7 +23,7 @@ const CheckoutForm = ({ product }) => {
     const [user] = useAuthState(auth)
     const totalPrice = { 'total': quantity * price }
     useEffect(() => {
-        fetch('https://afternoon-scrubland-76054.herokuapp.com/create-payment-intent', {
+        fetch('https://micropart-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -92,7 +92,7 @@ const CheckoutForm = ({ product }) => {
                 'transactionId': paymentIntent.id
             }
             console.log(product, updatedProduct);
-            fetch(`https://afternoon-scrubland-76054.herokuapp.com/cart/${_id}`, {
+            fetch(`https://micropart-server.onrender.com/cart/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

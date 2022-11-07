@@ -18,7 +18,7 @@ const Home = () => {
     const { data, isLoading } = useProducts();
     const queryClient = new QueryClient()
     const { isLoading: reviewLoading, error, data: review, refetch } = useQuery('review', () =>
-        fetch('https://afternoon-scrubland-76054.herokuapp.com/review').then(res =>
+        fetch('https://micropart-server.onrender.com/review').then(res =>
             res.json()
         )
     )

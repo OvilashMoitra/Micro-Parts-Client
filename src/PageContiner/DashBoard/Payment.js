@@ -17,7 +17,7 @@ const Payment = () => {
     const [user] = useAuthState(auth)
     const { id } = useParams();
     console.log(id)
-    const url = `https://afternoon-scrubland-76054.herokuapp.com/cart/${id}`;
+    const url = `https://micropart-server.onrender.com/cart/${id}`;
 
     const { data: product, isLoading } = useQuery(['payment', id], () => fetch(url, {
         method: 'GET',

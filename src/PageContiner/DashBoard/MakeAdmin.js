@@ -5,7 +5,7 @@ import UserTable from '../../Components/userTable/UserTable';
 const MakeAdmin = () => {
     const queryClient = new QueryClient()
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-        fetch('https://afternoon-scrubland-76054.herokuapp.com/alluser').then(res =>
+        fetch('https://micropart-server.onrender.com/alluser').then(res =>
             res.json()
         )
     )

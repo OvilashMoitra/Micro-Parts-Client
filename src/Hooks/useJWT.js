@@ -7,7 +7,7 @@ const useJWT = (user) => {
         const email = user?.user?.email;
         const newUser = { "email": user?.email, "name": user?.name }
         if (email) {
-            const url = `https://afternoon-scrubland-76054.herokuapp.com/user?email=${email}`
+            const url = `https://micropart-server.onrender.com/user?email=${email}`
             fetch(url, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' },

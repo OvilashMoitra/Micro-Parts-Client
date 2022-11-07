@@ -27,7 +27,7 @@ const AddProduct = () => {
                         stock: data?.stock
                     }
                     console.log(product);
-                    fetch(`https://afternoon-scrubland-76054.herokuapp.com/addproduct`, {
+                    fetch(`https://micropart-server.onrender.com/addproduct`, {
                         method: 'POST',
                         headers: {
                             "content-type": 'application/json',

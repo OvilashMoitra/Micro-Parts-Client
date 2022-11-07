@@ -9,7 +9,7 @@ const UpdateProfileModal = ({ setOpenModal, setPercentage }) => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         console.log(data)
-        const url = `https://afternoon-scrubland-76054.herokuapp.com/updateProfile?email=${user?.email}`
+        const url = `https://micropart-server.onrender.com/updateProfile?email=${user?.email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

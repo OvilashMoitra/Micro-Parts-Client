@@ -6,7 +6,7 @@ const useRole = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://afternoon-scrubland-76054.herokuapp.com/user?email=${email}`, {
+            fetch(`https://micropart-server.onrender.com/user?email=${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',
