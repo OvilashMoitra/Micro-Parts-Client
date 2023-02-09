@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../../Components/Banner/Banner';
 import BusinessSummary from '../../Components/BusinessSummary/BusinessSummary';
 import Carousel from '../../Components/Carousel/Carousel';
@@ -14,8 +14,18 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { QueryClient, useQuery } from 'react-query';
 import ShowReview from '../../Components/ShowReview/ShowReview';
+import fetchProduct from '../../redux/thunks/products/fetchProduct';
+import { useDispatch, useSelector } from 'react-redux';
+import { allProduct } from '../../redux/actiontypes/actiontype';
 const Home = () => {
     const { data, isLoading } = useProducts();
+    const dispatch = useDispatch()
+    // console.log("dispatch hook", dispatch({ type: allProduct}))
+    const {products}=useSelector(state=>state)
+    useEffect(() => {
+        dispatch(fetchProduct())
+    },[dispatch])
+    // console.log("coming from redux",state)
     const queryClient = new QueryClient()
     const { isLoading: reviewLoading, error, data: review, refetch } = useQuery('review', () =>
         fetch('https://micropart-server.onrender.com/review').then(res =>
@@ -36,7 +46,7 @@ const Home = () => {
             <Expertise></Expertise>
             <div className="products-container">
                 {
-                    data.map(product => <Products
+                    products.map(product => <Products
                         key={product._id}
                         product={product}
                     ></Products>)
